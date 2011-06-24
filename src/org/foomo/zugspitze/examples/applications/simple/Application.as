@@ -3,13 +3,13 @@ package org.foomo.zugspitze.examples.applications.simple
 	import org.foomo.zugspitze.examples.applications.simple.controllers.ApplicationController;
 	import org.foomo.zugspitze.examples.applications.simple.models.ApplicationModel;
 	import org.foomo.zugspitze.examples.applications.simple.views.ApplicationView;
-	import org.foomo.zugspitze.apps.WindowedApplication;
+	import org.foomo.zugspitze.apps.ZugspitzeWindowedApplication;
 
 	import flash.events.Event;
 
 	import mx.events.FlexEvent;
 
-	public class Application extends WindowedApplication
+	public class Application extends ZugspitzeWindowedApplication
 	{
 		//-----------------------------------------------------------------------------------------
 		// ~ Constructor
