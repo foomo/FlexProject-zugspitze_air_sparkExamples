@@ -14,39 +14,53 @@
  * You should have received a copy of the GNU Lesser General Public License along with
  * the foomo Opensource Framework. If not, see <http://www.gnu.org/licenses/>.
  */
-package org.foomo.zugspitze.examples.applications.blank.controllers
+package org.foomo.zugspitze.spark.applications.simple
 {
-	import org.foomo.zugspitze.examples.applications.blank.models.ApplicationModel;
-	import org.foomo.zugspitze.examples.applications.blank.views.ApplicationView;
-	import org.foomo.zugspitze.core.ZugspitzeController;
+	import flash.events.Event;
+
+	import mx.events.FlexEvent;
+
+	import org.foomo.zugspitze.spark.applications.simple.controllers.ApplicationController;
+	import org.foomo.zugspitze.spark.applications.simple.models.ApplicationModel;
+	import org.foomo.zugspitze.spark.applications.simple.views.ApplicationView;
+	import org.foomo.zugspitze.spark.core.ZugspitzeWindowedApplication;
 
 	/**
 	 * @link    http://www.foomo.org
 	 * @license http://www.gnu.org/licenses/lgpl.txt
 	 * @author  franklin <franklin@weareinteractive.com>
 	 */
-	public class ApplicationController extends ZugspitzeController
+	public class Application extends ZugspitzeWindowedApplication
 	{
 		//-----------------------------------------------------------------------------------------
-		// ~ Initialize application
+		// ~ Constructor
 		//-----------------------------------------------------------------------------------------
 
-		public function initialize():void
+		public function Application()
 		{
+			super();
+			this.viewClass = ApplicationView;
+			this.modelClass = ApplicationModel;
+			this.controllerClass = ApplicationController;
+			this.addEventListener(FlexEvent.CREATION_COMPLETE, this.creationCompleteHandler);
 		}
 
 		//-----------------------------------------------------------------------------------------
-		// ~ Private helper methods
+		// ~ Public static application singleton
 		//-----------------------------------------------------------------------------------------
 
-		private function get model():ApplicationModel
+		public static function get application():Application
 		{
-			return this.zugspitze.model as ApplicationModel
+			return Application(_zugspitze.application)
 		}
 
-		private function get view():ApplicationView
+		//-----------------------------------------------------------------------------------------
+		// ~ Private Eventhandler
+		//-----------------------------------------------------------------------------------------
+
+		private function creationCompleteHandler(event:Event):void
 		{
-			return this.zugspitze.view as ApplicationView
+			ApplicationController(this.controller).initialize();
 		}
 	}
 }

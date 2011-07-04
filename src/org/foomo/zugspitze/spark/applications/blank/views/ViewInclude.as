@@ -1,6 +1,6 @@
-import org.foomo.zugspitze.examples.applications.blank.Application;
-import org.foomo.zugspitze.examples.applications.blank.controllers.ApplicationController;
-import org.foomo.zugspitze.examples.applications.blank.models.ApplicationModel;
+import org.foomo.zugspitze.spark.applications.blank.Application;
+import org.foomo.zugspitze.spark.applications.blank.controllers.ApplicationController;
+import org.foomo.zugspitze.spark.applications.blank.models.ApplicationModel;
 import org.foomo.zugspitze.core.ZugspitzeView;
 
 import flash.display.DisplayObject;

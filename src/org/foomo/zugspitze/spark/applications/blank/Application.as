@@ -14,49 +14,53 @@
  * You should have received a copy of the GNU Lesser General Public License along with
  * the foomo Opensource Framework. If not, see <http://www.gnu.org/licenses/>.
  */
-package org.foomo.zugspitze.examples.applications.simple.controllers
+package org.foomo.zugspitze.spark.applications.blank
 {
-	import org.foomo.zugspitze.examples.applications.simple.models.ApplicationModel;
-	import org.foomo.zugspitze.examples.applications.simple.views.ApplicationView;
-	import org.foomo.zugspitze.core.ZugspitzeController;
+	import org.foomo.zugspitze.spark.applications.blank.controllers.ApplicationController;
+	import org.foomo.zugspitze.spark.applications.blank.models.ApplicationModel;
+	import org.foomo.zugspitze.spark.applications.blank.views.ApplicationView;
+	import org.foomo.zugspitze.apps.ZugspitzeWindowedApplication;
+
+	import flash.events.Event;
+
+	import mx.events.FlexEvent;
 
 	/**
 	 * @link    http://www.foomo.org
 	 * @license http://www.gnu.org/licenses/lgpl.txt
 	 * @author  franklin <franklin@weareinteractive.com>
 	 */
-	public class ApplicationController extends ZugspitzeController
+	public class Application extends ZugspitzeWindowedApplication
 	{
 		//-----------------------------------------------------------------------------------------
-		// ~ Initialize application
+		// ~ Constructor
 		//-----------------------------------------------------------------------------------------
 
-		public function initialize():void
+		public function Application()
 		{
-			this.model.welcomeText = 'Please enter a text and submit.';
+			super();
+			this.viewClass = ApplicationView;
+			this.modelClass = ApplicationModel;
+			this.controllerClass = ApplicationController;
+			this.addEventListener(FlexEvent.CREATION_COMPLETE, this.creationCompleteHandler);
 		}
 
 		//-----------------------------------------------------------------------------------------
-		// ~ Public mehtods
+		// ~ Public static application singleton
 		//-----------------------------------------------------------------------------------------
 
-		public function setText(value:String):void
+		public static function get application():Application
 		{
-			this.model.welcomeText = value;
+			return Application(_zugspitze.application)
 		}
 
 		//-----------------------------------------------------------------------------------------
-		// ~ Private helper methods
+		// ~ Private Eventhandler
 		//-----------------------------------------------------------------------------------------
 
-		private function get model():ApplicationModel
+		private function creationCompleteHandler(event:Event):void
 		{
-			return this.zugspitze.model as ApplicationModel
-		}
-
-		private function get view():ApplicationView
-		{
-			return this.zugspitze.view as ApplicationView
+			ApplicationController(this.controller).initialize();
 		}
 	}
 }

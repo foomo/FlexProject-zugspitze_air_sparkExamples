@@ -14,53 +14,31 @@
  * You should have received a copy of the GNU Lesser General Public License along with
  * the foomo Opensource Framework. If not, see <http://www.gnu.org/licenses/>.
  */
-package org.foomo.zugspitze.examples.applications.blank
+package org.foomo.zugspitze.spark.applications.simple.models
 {
-	import org.foomo.zugspitze.examples.applications.blank.controllers.ApplicationController;
-	import org.foomo.zugspitze.examples.applications.blank.models.ApplicationModel;
-	import org.foomo.zugspitze.examples.applications.blank.views.ApplicationView;
-	import org.foomo.zugspitze.apps.ZugspitzeWindowedApplication;
+	import org.foomo.zugspitze.core.ZugspitzeModel;
 
-	import flash.events.Event;
-
-	import mx.events.FlexEvent;
-
+	[Bindable]
+	
 	/**
 	 * @link    http://www.foomo.org
 	 * @license http://www.gnu.org/licenses/lgpl.txt
 	 * @author  franklin <franklin@weareinteractive.com>
 	 */
-	public class Application extends ZugspitzeWindowedApplication
+	public class ApplicationModel extends ZugspitzeModel
 	{
+		//-----------------------------------------------------------------------------------------
+		// ~ Variables
+		//-----------------------------------------------------------------------------------------
+
+		public var welcomeText:String;
+
 		//-----------------------------------------------------------------------------------------
 		// ~ Constructor
 		//-----------------------------------------------------------------------------------------
 
-		public function Application()
+		public function ApplicationModel()
 		{
-			super();
-			this.viewClass = ApplicationView;
-			this.modelClass = ApplicationModel;
-			this.controllerClass = ApplicationController;
-			this.addEventListener(FlexEvent.CREATION_COMPLETE, this.creationCompleteHandler);
-		}
-
-		//-----------------------------------------------------------------------------------------
-		// ~ Public static application singleton
-		//-----------------------------------------------------------------------------------------
-
-		public static function get application():Application
-		{
-			return Application(_zugspitze.application)
-		}
-
-		//-----------------------------------------------------------------------------------------
-		// ~ Private Eventhandler
-		//-----------------------------------------------------------------------------------------
-
-		private function creationCompleteHandler(event:Event):void
-		{
-			ApplicationController(this.controller).initialize();
 		}
 	}
 }
