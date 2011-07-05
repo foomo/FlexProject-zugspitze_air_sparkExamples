@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.foomo.org" xsi:schemaLocation="http://www.foomo.org http://www.foomo.org/foomo/modules/Foomo.Flash/schemas/project.xsd">
+	<id>org.foomo.zugspitze.air.spark.examples</id>
+	<group>org.foomo.zugspitze</group>
+	<type>Implementation Project</type>
+	<name>AIR (Spark) Examples</name>
+	<description>Zugpsitze AIR Examples.</description>
+	<exclude>false</exclude>
+	<dependencies>
+		<id>org.foomo.flash</id>
+		<id>org.foomo.zugspitze.core</id>
+		<id>org.foomo.zugspitze.spark</id>
+		<id>org.foomo.zugspitze.air.spark</id>
+	</dependencies>
+	<applications>
+		<application>
+			<id>org.foomo.zugspitze.air.applications.blank</id>
+			<name>Blank Application</name>
+			<description>This is a blank application skeleton.</description>
+			<package>org.foomo.zugspitze.air.applications.blank</package>
+			<sources>
+				<path>src/BlankApplication.mxml</path>
+				<path>src/BlankApplication-app.xml</path>
+				<path>src/org/foomo/zugspitze/air/applications/blank</path>
+			</sources>
+		</application>
+		<application>
+			<id>org.foomo.zugspitze.air.applications.simple</id>
+			<name>Simple Application</name>
+			<description>This is a simple mvc application example.</description>
+			<package>org.foomo.zugspitze.air.applications.simple</package>
+			<sources>
+				<path>src/SimpleApplication.mxml</path>
+				<path>src/SimpleApplication-app.xml</path>
+				<path>src/org/foomo/zugspitze/air/applications/simple</path>
+			</sources>
+		</application>
+	</applications>
+</config>

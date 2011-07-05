@@ -23,7 +23,7 @@ package org.foomo.zugspitze.air.applications.simple
 	import org.foomo.zugspitze.air.applications.simple.controllers.ApplicationController;
 	import org.foomo.zugspitze.air.applications.simple.models.ApplicationModel;
 	import org.foomo.zugspitze.air.applications.simple.views.ApplicationView;
-	import org.foomo.zugspitze.spark.core.ZugspitzeWindowedApplication;
+	import org.foomo.zugspitze.air.core.ZugspitzeWindowedApplication;
 
 	/**
 	 * @link    http://www.foomo.org
