@@ -14,7 +14,7 @@
  * You should have received a copy of the GNU Lesser General Public License along with
  * the foomo Opensource Framework. If not, see <http://www.gnu.org/licenses/>.
  */
-package org.foomo.zugspitze.spark.applications.simple.models
+package org.foomo.zugspitze.air.applications.blank.models
 {
 	import org.foomo.zugspitze.core.ZugspitzeModel;
 
@@ -27,12 +27,6 @@ package org.foomo.zugspitze.spark.applications.simple.models
 	 */
 	public class ApplicationModel extends ZugspitzeModel
 	{
-		//-----------------------------------------------------------------------------------------
-		// ~ Variables
-		//-----------------------------------------------------------------------------------------
-
-		public var welcomeText:String;
-
 		//-----------------------------------------------------------------------------------------
 		// ~ Constructor
 		//-----------------------------------------------------------------------------------------

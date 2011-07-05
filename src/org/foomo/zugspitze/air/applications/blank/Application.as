@@ -14,11 +14,11 @@
  * You should have received a copy of the GNU Lesser General Public License along with
  * the foomo Opensource Framework. If not, see <http://www.gnu.org/licenses/>.
  */
-package org.foomo.zugspitze.spark.applications.blank
+package org.foomo.zugspitze.air.applications.blank
 {
-	import org.foomo.zugspitze.spark.applications.blank.controllers.ApplicationController;
-	import org.foomo.zugspitze.spark.applications.blank.models.ApplicationModel;
-	import org.foomo.zugspitze.spark.applications.blank.views.ApplicationView;
+	import org.foomo.zugspitze.air.applications.blank.controllers.ApplicationController;
+	import org.foomo.zugspitze.air.applications.blank.models.ApplicationModel;
+	import org.foomo.zugspitze.air.applications.blank.views.ApplicationView;
 	import org.foomo.zugspitze.apps.ZugspitzeWindowedApplication;
 
 	import flash.events.Event;

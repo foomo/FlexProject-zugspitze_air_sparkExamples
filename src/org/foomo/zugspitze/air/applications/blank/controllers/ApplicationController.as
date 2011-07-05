@@ -14,25 +14,39 @@
  * You should have received a copy of the GNU Lesser General Public License along with
  * the foomo Opensource Framework. If not, see <http://www.gnu.org/licenses/>.
  */
-package org.foomo.zugspitze.spark.applications.blank.models
+package org.foomo.zugspitze.air.applications.blank.controllers
 {
-	import org.foomo.zugspitze.core.ZugspitzeModel;
+	import org.foomo.zugspitze.air.applications.blank.models.ApplicationModel;
+	import org.foomo.zugspitze.air.applications.blank.views.ApplicationView;
+	import org.foomo.zugspitze.core.ZugspitzeController;
 
-	[Bindable]
-	
 	/**
 	 * @link    http://www.foomo.org
 	 * @license http://www.gnu.org/licenses/lgpl.txt
 	 * @author  franklin <franklin@weareinteractive.com>
 	 */
-	public class ApplicationModel extends ZugspitzeModel
+	public class ApplicationController extends ZugspitzeController
 	{
 		//-----------------------------------------------------------------------------------------
-		// ~ Constructor
+		// ~ Initialize application
 		//-----------------------------------------------------------------------------------------
 
-		public function ApplicationModel()
+		public function initialize():void
 		{
+		}
+
+		//-----------------------------------------------------------------------------------------
+		// ~ Private helper methods
+		//-----------------------------------------------------------------------------------------
+
+		private function get model():ApplicationModel
+		{
+			return this.zugspitze.model as ApplicationModel
+		}
+
+		private function get view():ApplicationView
+		{
+			return this.zugspitze.view as ApplicationView
 		}
 	}
 }

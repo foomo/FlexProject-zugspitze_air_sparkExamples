@@ -14,10 +14,10 @@
  * You should have received a copy of the GNU Lesser General Public License along with
  * the foomo Opensource Framework. If not, see <http://www.gnu.org/licenses/>.
  */
-package org.foomo.zugspitze.spark.applications.blank.controllers
+package org.foomo.zugspitze.air.applications.simple.controllers
 {
-	import org.foomo.zugspitze.spark.applications.blank.models.ApplicationModel;
-	import org.foomo.zugspitze.spark.applications.blank.views.ApplicationView;
+	import org.foomo.zugspitze.air.applications.simple.models.ApplicationModel;
+	import org.foomo.zugspitze.air.applications.simple.views.ApplicationView;
 	import org.foomo.zugspitze.core.ZugspitzeController;
 
 	/**
@@ -33,6 +33,16 @@ package org.foomo.zugspitze.spark.applications.blank.controllers
 
 		public function initialize():void
 		{
+			this.model.welcomeText = 'Please enter a text and submit.';
+		}
+
+		//-----------------------------------------------------------------------------------------
+		// ~ Public mehtods
+		//-----------------------------------------------------------------------------------------
+
+		public function setText(value:String):void
+		{
+			this.model.welcomeText = value;
 		}
 
 		//-----------------------------------------------------------------------------------------
