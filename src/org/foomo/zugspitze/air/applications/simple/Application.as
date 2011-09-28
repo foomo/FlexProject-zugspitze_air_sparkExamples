@@ -24,6 +24,7 @@ package org.foomo.zugspitze.air.applications.simple
 	import org.foomo.zugspitze.air.applications.simple.models.ApplicationModel;
 	import org.foomo.zugspitze.air.applications.simple.views.ApplicationView;
 	import org.foomo.zugspitze.air.core.ZugspitzeWindowedApplication;
+	import org.foomo.zugspitze.events.ZugspitzeEvent;
 
 	/**
 	 * @link    http://www.foomo.org
@@ -42,7 +43,7 @@ package org.foomo.zugspitze.air.applications.simple
 			this.viewClass = ApplicationView;
 			this.modelClass = ApplicationModel;
 			this.controllerClass = ApplicationController;
-			this.addEventListener(FlexEvent.CREATION_COMPLETE, this.creationCompleteHandler);
+			this.addEventListener(ZugspitzeEvent.ZUGSPITZE_COMPLETE, this.zugspitzeCompleteHandler);
 		}
 
 		//-----------------------------------------------------------------------------------------
@@ -58,7 +59,7 @@ package org.foomo.zugspitze.air.applications.simple
 		// ~ Private Eventhandler
 		//-----------------------------------------------------------------------------------------
 
-		private function creationCompleteHandler(event:Event):void
+		private function zugspitzeCompleteHandler(event:ZugspitzeEvent):void
 		{
 			ApplicationController(this.controller).initialize();
 		}

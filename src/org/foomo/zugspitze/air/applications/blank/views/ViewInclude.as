@@ -3,6 +3,7 @@ import flash.display.DisplayObject;
 import org.foomo.zugspitze.air.applications.blank.Application;
 import org.foomo.zugspitze.air.applications.blank.controllers.ApplicationController;
 import org.foomo.zugspitze.air.applications.blank.models.ApplicationModel;
+import org.foomo.zugspitze.air.applications.blank.views.ApplicationView;
 import org.foomo.zugspitze.core.ZugspitzeView;
 
 /**
@@ -15,7 +16,7 @@ public var application:org.foomo.zugspitze.air.applications.blank.Application = 
  * @private
  */
 [Bindable]
-public var view:org.foomo.zugspitze.core.ZugspitzeView;
+public var view:org.foomo.zugspitze.air.applications.blank.views.ApplicationView;
 
 /**
  * @private
