@@ -16,10 +16,6 @@
  */
 package org.foomo.zugspitze.air.applications.simple
 {
-	import flash.events.Event;
-
-	import mx.events.FlexEvent;
-
 	import org.foomo.zugspitze.air.applications.simple.controllers.ApplicationController;
 	import org.foomo.zugspitze.air.applications.simple.models.ApplicationModel;
 	import org.foomo.zugspitze.air.applications.simple.views.ApplicationView;

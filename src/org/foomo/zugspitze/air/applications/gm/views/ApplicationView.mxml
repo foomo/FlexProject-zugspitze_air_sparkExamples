@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:VGroup
+	xmlns:fx="http://ns.adobe.com/mxml/2009"
+	xmlns:s="library://ns.adobe.com/flex/spark"
+	xmlns:maps="com.google.maps.*"
+	width="100%"
+	height="100%"
+	>
+	<fx:Script>
+		<![CDATA[
+			import com.google.maps.LatLng;
+			import com.google.maps.Map;
+			import com.google.maps.MapEvent;
+			import com.google.maps.MapMouseEvent;
+			import com.google.maps.MapType;
+
+			//-----------------------------------------------------------------------------------------
+			// ~ Includes
+			//-----------------------------------------------------------------------------------------
+
+			include 'ViewInclude.as';
+
+			//-----------------------------------------------------------------------------------------
+			// ~ Private eventhandler
+			//-----------------------------------------------------------------------------------------
+
+			/**
+			 *
+			 */
+			protected function map_mapevent_mapreadyHandler(event:MapEvent):void
+			{
+				this.map.setCenter(new LatLng(48.1393, 11.581), 12, MapType.NORMAL_MAP_TYPE);
+			}
+		]]>
+	</fx:Script>
+
+	<maps:Map id="map"
+		width="100%"
+		height="100%"
+		sensor="false"
+		url="http://your.url.com"
+		key="your.url.com.api.key"
+		mapevent_mapready="this.map_mapevent_mapreadyHandler(event)"
+		/>
+</s:VGroup>

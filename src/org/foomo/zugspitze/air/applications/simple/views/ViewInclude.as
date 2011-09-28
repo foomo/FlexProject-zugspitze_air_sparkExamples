@@ -15,7 +15,7 @@ public var application:org.foomo.zugspitze.air.applications.simple.Application =
  * @private
  */
 [Bindable]
-public var view:org.foomo.zugspitze.core.ZugspitzeView;
+public var view:org.foomo.zugspitze.air.applications.simple.views.ApplicationView;
 
 /**
  * @private

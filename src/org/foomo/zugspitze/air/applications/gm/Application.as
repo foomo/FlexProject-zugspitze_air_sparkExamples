@@ -14,20 +14,23 @@
  * You should have received a copy of the GNU Lesser General Public License along with
  * the foomo Opensource Framework. If not, see <http://www.gnu.org/licenses/>.
  */
-package org.foomo.zugspitze.air.applications.blank
+package org.foomo.zugspitze.air.applications.gm
 {
-	import org.foomo.zugspitze.air.applications.blank.controllers.ApplicationController;
-	import org.foomo.zugspitze.air.applications.blank.models.ApplicationModel;
-	import org.foomo.zugspitze.air.applications.blank.views.ApplicationView;
+	import flash.events.Event;
+
+	import mx.events.FlexEvent;
+
+	import org.foomo.zugspitze.air.applications.gm.controllers.ApplicationController;
+	import org.foomo.zugspitze.air.applications.gm.models.ApplicationModel;
+	import org.foomo.zugspitze.air.applications.gm.views.ApplicationView;
 	import org.foomo.zugspitze.air.core.ZugspitzeWindowedApplication;
-	import org.foomo.zugspitze.events.ZugspitzeEvent;
 
 	/**
 	 * @link    http://www.foomo.org
 	 * @license http://www.gnu.org/licenses/lgpl.txt
 	 * @author  franklin <franklin@weareinteractive.com>
 	 */
-	public class Application extends ZugspitzeWindowedApplication
+	public class Application extends org.foomo.zugspitze.air.core.ZugspitzeWindowedApplication
 	{
 		//-----------------------------------------------------------------------------------------
 		// ~ Constructor
@@ -39,7 +42,7 @@ package org.foomo.zugspitze.air.applications.blank
 			this.viewClass = ApplicationView;
 			this.modelClass = ApplicationModel;
 			this.controllerClass = ApplicationController;
-			this.addEventListener(ZugspitzeEvent.ZUGSPITZE_COMPLETE, this.zugspitzeCompleteHandler);
+			this.addEventListener(FlexEvent.CREATION_COMPLETE, this.creationCompleteHandler);
 		}
 
 		//-----------------------------------------------------------------------------------------
@@ -55,7 +58,7 @@ package org.foomo.zugspitze.air.applications.blank
 		// ~ Private Eventhandler
 		//-----------------------------------------------------------------------------------------
 
-		private function zugspitzeCompleteHandler(event:ZugspitzeEvent):void
+		private function creationCompleteHandler(event:Event):void
 		{
 			ApplicationController(this.controller).initialize();
 		}

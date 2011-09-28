@@ -8,6 +8,7 @@
 	<description>Zugpsitze AIR Examples.</description>
 	<exclude>false</exclude>
 	<dependencies>
+		<id>org.foomo.core</id>
 		<id>org.foomo.flash</id>
 		<id>org.foomo.zugspitze.core</id>
 		<id>org.foomo.zugspitze.spark</id>
@@ -34,6 +35,18 @@
 				<path>src/SimpleApplication.mxml</path>
 				<path>src/SimpleApplication-app.xml</path>
 				<path>src/org/foomo/zugspitze/air/applications/simple</path>
+			</sources>
+		</application>
+		<application>
+			<id>org.foomo.zugspitze.air.applications.gm</id>
+			<name>GM Application</name>
+			<description>This is a simple google maps integration application example.</description>
+			<package>org.foomo.zugspitze.air.applications.gm</package>
+			<sources>
+				<path>src/GoogleMaps.mxml</path>
+				<path>src/GoogleMaps-app.xml</path>
+				<path>src/org/foomo/zugspitze/air/applications/gm</path>
+				<path>libs/map_flex_1_20.swc</path>
 			</sources>
 		</application>
 	</applications>
